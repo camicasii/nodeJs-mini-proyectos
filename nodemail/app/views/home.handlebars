@@ -1,0 +1,66 @@
+  <div class="container">
+      {{#if alert}}
+      {{#if is_send }}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+                    Mensaje Enviado
+                    <button type="button" class="close" data-dismiss="alert" aria-label="close" >
+                        <span aria-hidden="true" >&otimes;</span>
+                    </button>
+                </div>
+        {{else}}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    A ocurrido un error
+                    <button type="button" class="close" data-dismiss="alert" aria-label="close" >
+                        <span aria-hidden="true" >&otimes;</span>
+                    </button>
+                </div>
+      {{/if}}
+      {{/if}}
+
+
+        <div class="d-flex justify-content-center align-items-center pt-3">
+            <div class="card">
+
+<!-- Default form contact -->
+<form class="text-center border border-light p-5" action="/send?token={{token}}" method="POST" id="formAction">
+
+    <p class="h4 mb-4">Contact us: {{token}}</p>
+
+    <!-- Name -->
+    <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Name" autofocus
+    name="name">
+
+    <!-- Email -->
+    <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="E-mail"
+    name="email">
+
+    <!-- Subject -->
+    <label>Subject</label>
+    <select class="browser-default custom-select mb-4" name="subject">
+        <option value="" disabled>Choose option</option>
+        <option value="1" selected>Feedback</option>
+        <option value="2">Report a bug</option>
+        <option value="3">Feature request</option>
+        <option value="4">Feature request</option>
+    </select>
+
+    <!-- Message -->
+    <div class="form-group" >
+        <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Message"
+        name="message"></textarea>
+    </div>
+
+    
+ <div class="g-recaptcha" data-sitekey="6Lely64ZAAAAAEYf8jRGisf3Q3Vln8PXSYxQE0pT" ></div>
+      <br/>
+    <!-- Send button -->
+    <button class="btn btn-info btn-block" type="submit">Send</button>
+
+</form>
+<!-- Default form contact -->
+
+
+                
+            </div>
+        </div>
+    </div>
